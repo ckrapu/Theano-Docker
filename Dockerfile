@@ -86,7 +86,7 @@ RUN conda install --quiet --yes \
     && conda clean -tipsy
 
 # Install Theano, pygpu
-RUN conda install -c mila-udem -y Theano=$THEANO_VERSION pygpu=$PYGPU_VERSION pymc3 arviz
+RUN conda install -c mila-udem -y Theano=$THEANO_VERSION pygpu=$PYGPU_VERSION pymc3 arviz tensorflow-probability
 ENV MKL_THREADING_LAYER GNU
 
 USER root
