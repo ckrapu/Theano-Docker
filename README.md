@@ -1,6 +1,6 @@
-# Theano-Docker
+# pymc3-gpu-docker
 
-This repository contains Docker files for Theano running inside a Jupyter notebook.
+This repository contains Docker files for running PyMC3 with GPU support for Theano.
 
 To build the Docker:
 ```
