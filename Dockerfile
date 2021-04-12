@@ -87,8 +87,7 @@ RUN conda install --quiet --yes \
     && conda clean -tipsy
 
 # Install Theano, pygpu
-RUN conda install -c mila-udem -y Theano=$THEANO_VERSION pygpu=$PYGPU_VERSION
-RUN conda install -c conda-forge -y pymc3=$PYMC3_VERSION
+RUN conda install -c conda-forge -y pymc3=$PYMC3_VERSION Theano=$THEANO_VERSION pygpu=$PYGPU_VERSION
 ENV MKL_THREADING_LAYER GNU
 
 USER root
