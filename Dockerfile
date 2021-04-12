@@ -72,7 +72,6 @@ ENV CONDA_MD5 7fe70b214bee1143e3e3f0467b71453c
 RUN cd /tmp && \
     mkdir -p $CONDA_DIR && \
     wget --quiet https://repo.continuum.io/miniconda/Miniconda3-${CONDA_VER}-Linux-x86_64.sh && \
-    echo "$CONDA_MD5 *Miniconda3-${CONDA_VER}-Linux-x86_64.sh" | md5sum -c - && \
     /bin/bash Miniconda3-${CONDA_VER}-Linux-x86_64.sh -f -b -p $CONDA_DIR && \
     rm Miniconda3-${CONDA_VER}-Linux-x86_64.sh && \
     $CONDA_DIR/bin/conda install --quiet --yes conda==${CONDA_VER} && \
