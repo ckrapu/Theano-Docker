@@ -67,8 +67,7 @@ RUN mkdir /home/$NB_USER/work && \
     echo "cacert=/etc/ssl/certs/ca-certificates.crt" > /home/$NB_USER/.curlrc
 
 # Install conda as jovyan
-ENV CONDA_VER 4.10.0
-ENV CONDA_MD5 7fe70b214bee1143e3e3f0467b71453c
+ENV CONDA_VER 4.9.2
 RUN cd /tmp && \
     mkdir -p $CONDA_DIR && \
     wget --quiet https://repo.continuum.io/miniconda/Miniconda3-${CONDA_VER}-Linux-x86_64.sh && \
