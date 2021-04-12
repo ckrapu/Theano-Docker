@@ -1,7 +1,7 @@
 # Heavily Inspired from https://github.com/jupyter/docker-stacks/tree/master/minimal-notebook
 FROM nvidia/cuda:9.0-cudnn7-devel
 
-ENV THEANO-PYMC_VERSION 1.1.2
+ENV THEANOPYMC_VERSION 1.1.2
 #LABEL com.nvidia.theano.version="1.0.5"
 ENV PYGPU_VERSION 0.7.6
 ENV PYMC3_VERSION 3.11.1
@@ -87,7 +87,7 @@ RUN conda install --quiet --yes \
     && conda clean -tipsy
 
 # Install Theano, pygpu
-RUN conda install -c conda-forge -y pymc3=$PYMC3_VERSION theano-pymc=$THEANO-PYMC_VERSION pygpu=$PYGPU_VERSION
+RUN conda install -c conda-forge -y pymc3=$PYMC3_VERSION theano-pymc=$THEANOPYMC_VERSION pygpu=$PYGPU_VERSION
 ENV MKL_THREADING_LAYER GNU
 
 USER root
