@@ -79,7 +79,7 @@ RUN cd /tmp && \
 
 # Install Jupyter notebook as jovyan
 RUN conda install --quiet --yes \
-    'notebook=5.0*' \
+    notebook \
     terminado \
     mkl-service \
     && conda clean -tipsy
