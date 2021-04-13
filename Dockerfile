@@ -4,7 +4,7 @@ FROM nvidia/cuda:8.0-cudnn6-devel
 ENV THEANO_VERSION 1.0.1
 #LABEL com.nvidia.theano.version="1.0.5"
 ENV PYGPU_VERSION 0.7.6
-ENV PYMC3_VERSION 3.8
+ENV PYMC3_VERSION 3.6
 
 USER root
 
