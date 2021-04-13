@@ -1,10 +1,10 @@
 # Heavily Inspired from https://github.com/jupyter/docker-stacks/tree/master/minimal-notebook
-FROM nvidia/cuda:9.0-cudnn7-devel
+FROM nvidia/cuda:8.0-cudnn6-devel
 
 ENV THEANOPYMC_VERSION 1.1.2
 #LABEL com.nvidia.theano.version="1.0.5"
-ENV PYGPU_VERSION 0.7.6
-ENV PYMC3_VERSION 3.11.1
+#ENV PYGPU_VERSION 0.7.6
+ENV PYMC3_VERSION 3.8
 
 USER root
 
@@ -120,4 +120,5 @@ USER jovyan
 
 RUN mkdir data && cd data && wget http://www.iro.umontreal.ca/~lisa/deep/data/mnist/mnist_py3k.pkl.gz -O mnist.pkl.gz
 
-CMD ["start-notebook.sh", "notebook"]
+#CMD ["start-notebook.sh", "notebook"]
+CMD ["python notebook/pm_gpu_regression.py"]
