@@ -97,8 +97,8 @@ ENTRYPOINT ["tini", "--"]
 
 # Add local files as late as possible to avoid cache busting
 # Start notebook server
-COPY start-notebook.sh /usr/local/bin/
-RUN chmod 755 /usr/local/bin/start-notebook.sh
+COPY run-test.sh /usr/local/bin/
+RUN chmod 755 /usr/local/bin/run-test.sh
 COPY jupyter_notebook_config_secure.py /home/$NB_USER/.jupyter/jupyter_notebook_config.py
 COPY notebook /home/$NB_USER/work/notebook
 
