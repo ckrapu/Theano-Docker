@@ -118,7 +118,5 @@ RUN chown -R $NB_USER:users /home/$NB_USER
 # Switch back to jovyan to avoid accidental container runs as root
 USER jovyan
 
-RUN mkdir data && cd data && wget http://www.iro.umontreal.ca/~lisa/deep/data/mnist/mnist_py3k.pkl.gz -O mnist.pkl.gz
-
 CMD ["run-test.sh"]
 #CMD ["python ./notebook/pm_gpu_regression.py"]
