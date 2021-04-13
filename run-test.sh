@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 cd notebook
-python pm-gpu-regression.py
+python pm_gpu_regression.py
