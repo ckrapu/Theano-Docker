@@ -121,4 +121,4 @@ USER jovyan
 RUN mkdir data && cd data && wget http://www.iro.umontreal.ca/~lisa/deep/data/mnist/mnist_py3k.pkl.gz -O mnist.pkl.gz
 
 #CMD ["start-notebook.sh", "notebook"]
-#CMD ["python ./notebook/pm_gpu_regression.py"]
+CMD ["python ./notebook/pm_gpu_regression.py"]
