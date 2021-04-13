@@ -1,10 +1,10 @@
 # Heavily Inspired from https://github.com/jupyter/docker-stacks/tree/master/minimal-notebook
 FROM nvidia/cuda:8.0-cudnn6-devel
 
-ENV THEANO_VERSION 1.0.5
+ENV THEANO_VERSION 1.0.1
 #LABEL com.nvidia.theano.version="1.0.5"
-#ENV PYGPU_VERSION 0.7.6
-ENV PYMC3_VERSION 3.9
+ENV PYGPU_VERSION 0.7.6
+ENV PYMC3_VERSION 3.8
 
 USER root
 
@@ -53,6 +53,9 @@ ENV NB_UID 1000
 #ENV LANG en_US.UTF-8
 #ENV LANGUAGE en_US.UTF-8
 
+#RUN update-alternatives --install /usr/bin/python python /usr/bin/python3.9
+#RUN update-alternatives --set python /usr/bin/python3.9
+
 # Create jovyan user with UID=1000 and in the 'users' group
 RUN useradd -m -s /bin/bash -N -u $NB_UID $NB_USER && \
     mkdir -p /opt/conda && \
@@ -85,7 +88,7 @@ RUN conda install --quiet --yes \
     && conda clean -tipsy
 
 # Install Theano, pygpu
-RUN conda install -c conda-forge -y pymc3=$PYMC3_VERSION theano=$THEANO_VERSION
+RUN conda install -c conda-forge -y pymc3=$PYMC3_VERSION theano=$THEANO_VERSION pygpu=$PYGPU_VERSION
 ENV MKL_THREADING_LAYER GNU
 
 USER root
